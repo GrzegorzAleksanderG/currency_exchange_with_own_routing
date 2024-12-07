@@ -1,7 +1,7 @@
 import React from "react";
 const PaymentsScreen = () => {
     return (<>
-    payments
+    payments - todo
     </>);
 }
 export default PaymentsScreen;
