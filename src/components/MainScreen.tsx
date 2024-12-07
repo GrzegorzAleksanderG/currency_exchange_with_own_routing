@@ -6,16 +6,30 @@ import PaymentsScreen from "./PaymentsScreen.tsx";
 import SelectionScreen from "./SelectionScreen.tsx";
 import WelcomeScreen from "./WelcomeScreen.tsx";
 import { Container } from "@mui/material";
+import { LOCATION } from "../consts.js";
 const MainScreen = () => {
-    return (<>
+    const view = window.location.pathname;
+    const {ACCEPT, ENDING, EXCHANGE, PAYMENTS, SELECTION, WELCOME} = LOCATION;
+    const renderContent = (path)=>{
+        switch(path){
+            case ACCEPT:
+                return(<AcceptScreen/>);
+            case ENDING:
+                return(<EndingScreen/>);
+            case EXCHANGE:
+                return(<ExchangeScreen/>);
+            case PAYMENTS:
+                return(<PaymentsScreen/>);
+            case SELECTION:
+                return(<SelectionScreen/>);
+            case WELCOME:
+                return(<WelcomeScreen/>);
+            }
+        }
+    return (
         <Container maxWidth="sm">
-            <AcceptScreen />
-            <EndingScreen />
-            <ExchangeScreen />
-            <PaymentsScreen />
-            <SelectionScreen />
-            <WelcomeScreen />
+            {renderContent(view)}
         </Container>
-    </>);
+    );
 }
 export default MainScreen;

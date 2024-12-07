@@ -13,3 +13,7 @@ export const getAPIData = async (category) => {
       }
     ).catch((error)=>{console.log(error)});
   };
+
+export const setLocation = (name) => {
+  window.location.pathname = name;
+}

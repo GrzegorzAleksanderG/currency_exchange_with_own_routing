@@ -1,7 +1,12 @@
 import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Typography } from "@mui/material";
 import React from "react";
 import { Trans } from 'react-i18next';
+import { setLocation } from "../utils";
+import { LOCATION } from "../consts";
 const WelcomeScreen = () => {
+    const handleAccept = () => {
+        setLocation(LOCATION.EXCHANGE);
+    }
     return (
     <Box>
         <Typography variant="h2" component="h2">
@@ -17,7 +22,7 @@ const WelcomeScreen = () => {
             </Select>
         </FormControl>
         <ButtonGroup variant="contained">
-            <Button><Trans>Accept</Trans></Button>
+            <Button onClick={handleAccept}><Trans>Accept</Trans></Button>
             <Button><Trans>Decline</Trans></Button>
         </ButtonGroup>
     </Box>
