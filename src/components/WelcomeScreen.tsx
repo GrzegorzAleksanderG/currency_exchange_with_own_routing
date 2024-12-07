@@ -1,23 +1,24 @@
 import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Typography } from "@mui/material";
 import React from "react";
+import { Trans } from 'react-i18next';
 const WelcomeScreen = () => {
     return (
     <Box>
         <Typography variant="h2" component="h2">
-            Accept terms of conditions
+            <Trans>Accept terms of conditions</Trans>
         </Typography>
         <Typography variant="h5" component="h5">
-            Select your language
+            <Trans>Select your language</Trans>
         </Typography>
         <FormControl fullWidth>
             <Select>
-                <MenuItem value={1}>English</MenuItem>
-                <MenuItem value={2}>Polski</MenuItem>
+                <MenuItem value={1}><Trans>English</Trans></MenuItem>
+                <MenuItem value={2}><Trans>Polski</Trans></MenuItem>
             </Select>
         </FormControl>
         <ButtonGroup variant="contained">
-            <Button>Accept</Button>
-            <Button>Decline</Button>
+            <Button><Trans>Accept</Trans></Button>
+            <Button><Trans>Decline</Trans></Button>
         </ButtonGroup>
     </Box>
     );

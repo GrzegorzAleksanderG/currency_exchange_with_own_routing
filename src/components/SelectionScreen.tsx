@@ -1,11 +1,12 @@
 import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import React from "react";
+import { Trans } from "react-i18next";
 const SelectionScreen = () => {
     return (
         <>
             <Box>
                 <Typography variant="h5" component="h5">
-                    Select currency to exchange
+                    <Trans>Select currency to exchange</Trans>
                 </Typography>
                 <TableContainer>
                     <Table>
@@ -17,8 +18,8 @@ const SelectionScreen = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <Button>Back</Button>
-                <Button>Next</Button>
+                <Button><Trans>Back</Trans></Button>
+                <Button><Trans>Next</Trans></Button>
             </Box>
         </>
     );
