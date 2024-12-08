@@ -1,18 +1,25 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Typography } from "@mui/material";
 import React from "react";
 import { Trans } from "react-i18next";
+import { setLocation } from "../utils.ts";
+import { LOCATION } from "../consts.ts";
 const EndingScreen = () => {
+    const handleBack = () => {
+        setLocation(LOCATION.WELCOME);
+    }
     return (
-        <>
-            <Box>
-                <Typography variant="h3" component="h3">
+            <Box className="box">
+                <Typography variant="h5" component="h5" className="header5">
                     <Trans>Thank you for using our services</Trans>
                 </Typography>
-                <Button>
-                    <Trans>Back</Trans>
-                </Button>
+                <footer>
+                    <ButtonGroup variant="contained">
+                        <Button onClick={handleBack}>
+                            <Trans>Back to start page</Trans>
+                        </Button>
+                    </ButtonGroup>
+                </footer>
             </Box>
-        </>
     );
 }
 export default EndingScreen;

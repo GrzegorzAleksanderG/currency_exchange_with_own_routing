@@ -5,12 +5,13 @@ import ExchangeScreen from "./ExchangeScreen.tsx";
 import PaymentsScreen from "./PaymentsScreen.tsx";
 import SelectionScreen from "./SelectionScreen.tsx";
 import WelcomeScreen from "./WelcomeScreen.tsx";
-import { Container } from "@mui/material";
-import { LOCATION } from "../consts.js";
+import { Container, Typography } from "@mui/material";
+import { LOCATION } from "../consts.ts";
+import { Trans } from "react-i18next";
 
 const {ACCEPT, ENDING, EXCHANGE, PAYMENTS, SELECTION, WELCOME} = LOCATION;
 
-const renderContent = (path)=>{
+const renderContent = (path: string)=>{
     switch(path){
         case ACCEPT:
             return(<AcceptScreen/>);
@@ -31,7 +32,10 @@ const MainScreen = () => {
     const view = window.location.pathname;
     
     return (
-        <Container maxWidth="sm">
+        <Container className="wrapper">
+            <Typography variant="h2" component="h2" className="header2">
+                <Trans>Currency exchange</Trans>
+            </Typography>
             {renderContent(view)}
         </Container>
     );

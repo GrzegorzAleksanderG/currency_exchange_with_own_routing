@@ -1,7 +1,9 @@
 import axios from "axios";
-import { URL_API } from "./consts";
+import { TRANSACTION, PAY, CURRENCIES, URL_API } from "./consts.ts";
 
-export const getAPIData = async (category) => { 
+type categoryType = typeof TRANSACTION | typeof PAY | typeof CURRENCIES;
+
+export const getAPIData = async (category : categoryType) => { 
     return await axios.get(
       `${URL_API}/${category}`,
       {
@@ -14,6 +16,6 @@ export const getAPIData = async (category) => {
     ).catch((error)=>{console.log(error)});
   };
 
-export const setLocation = (name) => {
+export const setLocation = (name : string) => {
   window.location.pathname = name;
 }

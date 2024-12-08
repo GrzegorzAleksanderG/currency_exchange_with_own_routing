@@ -14,9 +14,12 @@ const resources = {
             "Select currency to exchange":"Select currency to exchange",
             "Back":"Back",
             "Next":"Next",
-            "Type here value to exchange":"Type here value to exchange",
+            "Type here amount to exchange":"Type here amount to exchange",
             "Thank you for using our services":"Thank you for using our services",
             "Confirm value and currency":"Confirm value and currency",
+            "Select method of payment":"Select method of payment",
+            "Currency exchange":"Currency exchange",
+            "Back to start page":"Back to start page",
         }
     },
     pl: {
@@ -31,9 +34,12 @@ const resources = {
             "Select currency to exchange":"Wybierz walutę do wymiany",
             "Back":"Wstecz",
             "Next":"Dalej",
-            "Type here value to exchange":"Type here value to exchange",
+            "Type here amount to exchange":"Podaj wartość do wymiany",
             "Thank you for using our services":"Dziękujemy za korzystanie z naszych usług",
             "Confirm value and currency":"Potwierdź kwotę i walutę",
+            "Select method of payment":"Wybierz metodę płatności",
+            "Currency exchange":"Wymiana walut",
+            "Back to start page":"Powrót do strony głównej"
         }
     }
 }
