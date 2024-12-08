@@ -1,11 +1,19 @@
 import { Box, Button, ButtonGroup, FormControl, MenuItem, Select, Typography } from "@mui/material";
 import React from "react";
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { setLocation } from "../utils";
 import { LOCATION } from "../consts";
+import { useMachine } from '@xstate/react';
+import { languageMachine } from "../xStateMachines/languageMachine";
 const WelcomeScreen = () => {
     const handleAccept = () => {
         setLocation(LOCATION.EXCHANGE);
+    }
+    const [state, send] = useMachine(languageMachine);
+    const { i18n } = useTranslation();
+    const handleChangeLanguage = (evt) => {
+        i18n.changeLanguage(evt.target.value);
+        send({type: "CHANGE_LANGUAGE"}); //, {language: evt.target.value}
     }
     return (
     <Box>
@@ -16,9 +24,9 @@ const WelcomeScreen = () => {
             <Trans>Select your language</Trans>
         </Typography>
         <FormControl fullWidth>
-            <Select>
-                <MenuItem value={1}><Trans>English</Trans></MenuItem>
-                <MenuItem value={2}><Trans>Polski</Trans></MenuItem>
+            <Select onChange={handleChangeLanguage} value={"en"}>
+                <MenuItem value={"en"}><Trans>English</Trans></MenuItem>
+                <MenuItem value={"pl"}><Trans>Polski</Trans></MenuItem>
             </Select>
         </FormControl>
         <ButtonGroup variant="contained">
